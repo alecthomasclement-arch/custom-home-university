@@ -3,11 +3,12 @@
 Minimal two-step application website for [customhomeuniversity.com](https://customhomeuniversity.com), hosted on GitHub Pages.
 
 - index.html: landing page with a portrait video player, plus email and optional phone signup
-- apply.html: seven-question plan review application, listed price $1,495
+- apply.html: seven-question plan review application, listed price $1,500
 - thank-you.html: confirmation page shown ONLY after the backend verifies a successful application submission
 - privacy.html: draft privacy page — review before publishing to real visitors
 - assets/config.js: public settings for video URL and Google Apps Script submission endpoint
 - assets/site.css and site.js: shared styles and form logic
+- Homepage offer: $1,500 with a genuine annual capacity of no more than 50 new clients and a money-back satisfaction guarantee. This is not a live inventory count. The owner must update the separate private Google Apps Script notification email string from $1,495 to $1,500 and redeploy a new script version.
 
 ## Important: Forms are not connected yet
 
