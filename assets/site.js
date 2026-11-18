@@ -60,25 +60,27 @@
   }
 
   function configureLeadForm() {
-    const form = document.getElementById("leadForm");
-    const input = document.getElementById("leadEmail");
-    const phone = document.getElementById("leadPhone");
-    phone.addEventListener("input", () => phone.setCustomValidity(""));
-    const button = document.getElementById("leadSubmit");
-    const status = document.getElementById("leadStatus");
-    form.addEventListener("submit", async e => {
-      e.preventDefault();
-      input.value = input.value.trim();
-      validatePhone(phone);
-      if (!form.reportValidity()) return;
-      const email = input.value;
-      const phoneNumber = phone.value;
-      if (!(await submit(form, "lead", button, status))) return;
-      try {
-        sessionStorage.setItem("chu_application_email", email);
-        sessionStorage.setItem("chu_application_phone", phoneNumber);
-      } catch (_) {}
-      window.location.assign("apply.html");
+    document.querySelectorAll("form[data-lead-form]").forEach(form => {
+      const input = form.querySelector('input[name="email"]');
+      const phone = form.querySelector('input[name="phone"]');
+      const button = form.querySelector('button[type="submit"]');
+      const status = form.parentElement.querySelector(".form-status");
+      if (!input || !phone || !button || !status) return;
+      phone.addEventListener("input", () => phone.setCustomValidity(""));
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        input.value = input.value.trim();
+        validatePhone(phone);
+        if (!form.reportValidity()) return;
+        const email = input.value;
+        const phoneNumber = phone.value;
+        if (!(await submit(form, "lead", button, status))) return;
+        try {
+          sessionStorage.setItem("chu_application_email", email);
+          sessionStorage.setItem("chu_application_phone", phoneNumber);
+        } catch (_) {}
+        window.location.assign("apply.html");
+      });
     });
   }
   function configureApplicationForm() {

@@ -20,7 +20,7 @@
       </section>
       <section class="email-section" aria-labelledby="email-heading">
         <h2 id="email-heading">Start your private plan review.</h2>
-        <form id="leadForm" class="email-form" novalidate>
+        <form id="leadForm" class="email-form" data-lead-form novalidate>
           <label class="visually-hidden" for="leadEmail">Your email address</label>
           <input id="leadEmail" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
           <label class="visually-hidden" for="leadPhone">Cell phone number (optional)</label>
@@ -30,6 +30,28 @@
         </form>
         <p class="helper-text">We'll use your email to discuss your plan review. A phone number is optional. No payment required to apply.</p>
         <p id="leadStatus" class="form-status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="home-copy" aria-labelledby="home-copy-heading">
+        <p class="copy-eyebrow">An independent perspective before construction</p>
+        <h2 id="home-copy-heading">Understand your home before you build it.</h2>
+        <p>Building a custom home is one of the biggest investments you may ever make. But when it's time to approve the construction drawings, it can be difficult to know what you're actually looking at.</p>
+        <p>I'm a registered architect, and I created Custom Home University to give homeowners another set of eyes on their plans. I'll help you understand the drawings, identify possible design improvements and cost-saving opportunities, and find the questions worth asking your builder or architect before construction begins.</p>
+        <p>For <strong>$1,495</strong>, your private plan review includes an introductory call, a detailed review of your drawings, written observations, and a final one-on-one walkthrough to discuss what I've found.</p>
+        <p class="copy-closing">I accept one new project per week so every homeowner receives personal attention.</p>
+      </section>
+      <section class="email-section lower-signup" aria-labelledby="secondary-signup-heading">
+        <p class="copy-eyebrow">Ready for a second opinion?</p>
+        <h2 id="secondary-signup-heading">Apply for a Private Plan Review.</h2>
+        <form id="leadFormSecondary" class="email-form" data-lead-form novalidate>
+          <label class="visually-hidden" for="leadEmailSecondary">Your email address</label>
+          <input id="leadEmailSecondary" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
+          <label class="visually-hidden" for="leadPhoneSecondary">Cell phone number (optional)</label>
+          <input id="leadPhoneSecondary" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="Cell phone number (optional)">
+          <button class="primary-button" id="leadSubmitSecondary" type="submit">Continue to application <span aria-hidden="true">↗</span></button>
+          <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
+        </form>
+        <p class="helper-text">No payment required to apply. Your phone number is optional.</p>
+        <p id="leadStatusSecondary" class="form-status" role="status" aria-live="polite"></p>
       </section>
     </div>
     <footer class="site-footer">© <span data-year></span> Custom Home University <span aria-hidden="true">·</span> <a href="privacy.html">Privacy</a></footer>
