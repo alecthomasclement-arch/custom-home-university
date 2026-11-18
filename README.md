@@ -11,11 +11,11 @@ Minimal two-step application website for [customhomeuniversity.com](https://cust
 
 ## Important: Forms are not connected yet
 
-GitHub Pages cannot send email or SMS by itself. Until assets/config.js contains a Google Apps Script web-app URL, the homepage and application forms will **not** send submissions or redirect to the success page. A visitor sees a clear "not connected yet" message; no false success confirmation appears.
+GitHub Pages cannot send email by itself. Until assets/config.js contains a Google Apps Script web-app URL, the homepage and application forms will **not** send submissions or redirect to the success page. A visitor sees a clear "not connected yet" message; no false success confirmation appears.
 
 A separate *private* Google Apps Script backend file, Code.gs, with owner setup instructions was prepared for this project. Set OWNER_EMAIL as a Script Property in Google Apps Script, run setupStorage, deploy as a Web App executing as you and accessible to Anyone, then add its full HTTPS URL ending in /exec as backendUrl in assets/config.js. Test both lead and application submissions in a real browser, confirming Gmail and the private Google Sheet records.
 
-SMS requires a service such as Twilio. Set SMS credentials and recipient phone number only in Google Apps Script's private Script Properties, never in this public repository. SMS may have fees and registration requirements.
+Notifications are email-only; no SMS service is required.
 
 When ready to add an intro video, set videoUrl in assets/config.js to a supported YouTube/Vimeo/MP4 link.
 
