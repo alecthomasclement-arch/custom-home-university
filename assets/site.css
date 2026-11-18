@@ -5,24 +5,8 @@
 .response-container{max-width:786px;width:calc(100% - 64px);min-height:100svh;display:flex;flex-direction:column;margin:0 auto;padding-top:45px}.response-content{margin:auto 0;padding:68px 0}.checkmark{display:grid;place-items:center;border:1px solid #b7b5a8;border-radius:50%;width:55px;height:55px;font-size:25px;color:#415640;margin-bottom:30px}.response-content h1,.policy-container h1{font-weight:500;font-size:clamp(38px,6vw,56px);letter-spacing:-.065em;line-height:1.13;margin-bottom:23px}.response-content p:not(.eyebrow){max-width:530px;color:#56564e;line-height:1.7;font-size:16px}.text-link{text-decoration:underline;text-underline-offset:5px;font-size:13px;display:inline-block;margin-top:22px}.policy-container{max-width:720px;width:calc(100% - 64px);margin:0 auto;padding-top:46px}.policy-container h1{margin-top:80px}.policy-container>p{line-height:1.75;color:#55554f;font-size:15px;margin-bottom:19px}.policy-container .site-footer{margin-top:65px;text-align:left}
 @media(max-width:680px){.landing-container{width:calc(100% - 36px)}.landing-content{padding-top:clamp(64px,11vh,90px)}.brand-heading{font-size:clamp(35px,8.8vw,48px);margin-bottom:43px}.play-ring{width:64px;height:64px}.play-ring svg{width:20px}.video-placeholder{gap:15px}.placeholder-caption{font-size:8px}.email-form{flex-direction:column}.email-form input[type=email],.email-form input[type=tel]{flex:initial}.primary-button{width:100%}.email-section{width:100%;max-width:420px}.form-container,.response-container,.policy-container{width:calc(100% - 36px)}.form-header{padding-top:28px}.header-rule{margin:22px 0 45px}.intro{font-size:15px}.form-meta{margin-bottom:32px}.contact-panel{padding:18px}.question{padding:29px 0}.question legend{font-size:17px;gap:10px}.question-index{min-width:22px}.choices{grid-template-columns:1fr;gap:8px}.choices,.field-body{margin-left:32px}.choice span{min-height:52px;font-size:14px;padding:14px 13px}.choice input:checked+span:after{font-size:11px;padding-left:8px}.submit-application{font-size:14px}.response-content{padding:65px 0}.policy-container h1{margin-top:55px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.primary-button,.choice span{transition:none}}
-.home-copy{max-width:675px;margin:clamp(88px,12vh,132px) auto 0;padding:0 3px;color:var(--ink)}.copy-eyebrow{margin:0 0 20px;color:var(--muted);font-size:11px;font-weight:650;letter-spacing:.14em;text-transform:uppercase}.home-copy h2{font-size:clamp(31px,4.6vw,48px);font-weight:500;line-height:1.14;letter-spacing:-.055em;margin:0 0 27px;text-wrap:balance}.home-copy p:not(.copy-eyebrow){font-size:16px;line-height:1.79;color:#50504a;margin:0 0 20px}.home-copy p strong{color:var(--ink);font-weight:650}.home-copy .copy-closing{margin-top:27px!important;color:var(--ink)!important;font-weight:500}.lower-signup{padding:34px 28px 36px;background:#eeede8;border:1px solid #deddd5;margin-top:clamp(56px,8vh,82px);max-width:680px}.lower-signup .copy-eyebrow{margin-bottom:10px}.lower-signup h2{font-size:clamp(23px,3.4vw,31px);line-height:1.23;font-weight:500;letter-spacing:-.045em;margin-bottom:25px}.lower-signup .helper-text{margin-top:15px}@media(max-width:680px){.home-copy{margin-top:68px;padding:0 4px}.home-copy h2{font-size:clamp(31px,8vw,39px)}.home-copy p:not(.copy-eyebrow){font-size:15px;line-height:1.75}.lower-signup{padding:27px 18px 26px;margin-top:48px}.lower-signup h2{font-size:25px}}
-
-
-/* Private Plan Review offer section: outcome, diagnostic questions, proof of process, and capacity */
-.home-copy .copy-subheading{margin-top:28px!important;margin-bottom:12px!important;color:var(--ink)!important;font-weight:600;font-size:16px!important}
-.decision-questions{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:0}
-.decision-questions li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6;color:var(--ink)}
-.decision-questions li:first-child{border-top:1px solid var(--line)}
-.decision-questions li:before{content:"?";position:absolute;left:0;top:14px;width:21px;height:21px;border:1px solid #aca9a0;border-radius:50%;text-align:center;font-size:12px;line-height:19px;font-weight:600;color:var(--muted)}
-.offer-details{margin:38px 0 0;padding:29px 28px 12px;background:#eeede8;border:1px solid #deddd5}
-.offer-details .copy-eyebrow{margin:0 0 12px}
-.offer-inclusions{list-style:none;padding:0;margin:0}
-.offer-inclusions li{display:grid;gap:4px;padding:16px 0;border-bottom:1px solid #d7d5cc}
-.offer-inclusions li:last-child{border-bottom:none}
-.offer-inclusions strong{font-weight:600;color:var(--ink);font-size:15px}
-.offer-inclusions span{color:#66665e;line-height:1.6;font-size:14px}
-.home-copy .offer-price{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;padding:24px 0 19px;margin:0!important;color:var(--ink)!important;font-weight:600;font-size:17px!important;border-bottom:1px solid var(--line)}
-.home-copy .offer-price strong{font-weight:600;font-size:32px;letter-spacing:-.05em}
-.home-copy .offer-guarantee{margin-top:17px!important;font-size:14px!important}
-.home-copy .copy-closing{padding-left:16px;border-left:3px solid #416a49;margin-top:31px!important;font-size:15px!important}
-@media(max-width:680px){.decision-questions li{font-size:14px}.offer-details{padding:22px 19px 10px}.offer-inclusions strong{font-size:14px}.offer-inclusions span{font-size:13px}.home-copy .offer-price strong{font-size:29px}}
+/* Homepage: one limited-capacity message, one lead form. */
+.limited-signup{margin-top:clamp(37px,5.5vh,56px)}
+.limited-signup h2{font-size:clamp(21px,3.3vw,28px);font-weight:500;letter-spacing:-.04em;line-height:1.25;margin:0 0 10px}
+.limited-signup .capacity-note{max-width:500px;margin:0 auto 23px;font-size:14px;line-height:1.6;color:#62615b}
+@media(max-width:680px){.limited-signup .capacity-note{font-size:13px;max-width:380px}}

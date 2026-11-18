@@ -7,7 +7,7 @@
   <meta name="description" content="Custom Home University — professional plan reviews for homeowners building custom homes.">
   <title>Custom Home University</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/site.css?v=limited-slots-20261118">
   <script src="assets/config.js?v=afZ-vERgfIo-20261118" defer></script>
   <script src="assets/site.js?v=afZ-vERgfIo-20261118" defer></script>
 </head>
@@ -26,8 +26,9 @@
           allowfullscreen
         ></iframe>
       </section>
-      <section class="email-section" aria-labelledby="email-heading">
-        <h2 id="email-heading">Start your private plan review.</h2>
+      <section class="email-section limited-signup" aria-labelledby="email-heading">
+        <h2 id="email-heading">Available slots are limited.</h2>
+        <p class="capacity-note">I accept no more than 50 new clients per year to ensure each review receives my personal attention.</p>
         <form id="leadForm" class="email-form" data-lead-form novalidate>
           <label class="visually-hidden" for="leadEmail">Your email address</label>
           <input id="leadEmail" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
@@ -38,44 +39,6 @@
         </form>
         <p class="helper-text">We'll use your email to discuss your plan review. A phone number is optional. No payment required to apply.</p>
         <p id="leadStatus" class="form-status" role="status" aria-live="polite"></p>
-      </section>
-      <section class="home-copy" aria-labelledby="home-copy-heading">
-        <p class="copy-eyebrow">An independent architect's second set of eyes</p>
-        <h2 id="home-copy-heading">Before you approve your custom home plans, know what you're saying yes to.</h2>
-        <p>You're about to invest a significant amount of money in a home designed around your life. But a beautiful set of drawings doesn't always make it easy to see how the finished spaces will feel, function, or fit your priorities.</p>
-        <p class="copy-subheading">Before you sign off, can you confidently answer:</p>
-        <ul class="decision-questions">
-          <li>Will the layout work for the way your family actually lives?</li>
-          <li>Are there design decisions that could improve the home or simplify potential construction costs?</li>
-          <li>What should you ask your builder or architect before changes become harder to make?</li>
-        </ul>
-        <p>I'm a registered architect. Through Custom Home University, I give you an independent, experienced perspective on the plans you already have—so you can spot questions worth asking and make more informed decisions with your existing project team.</p>
-        <div class="offer-details">
-          <p class="copy-eyebrow">Your Private Plan Review includes</p>
-          <ul class="offer-inclusions">
-            <li><strong>A personal kickoff call</strong><span>We discuss your priorities, concerns, and what matters most in your new home.</span></li>
-            <li><strong>An independent review of your plans</strong><span>I examine the agreed drawings for design opportunities, practical considerations, and potential cost drivers.</span></li>
-            <li><strong>A written PDF review</strong><span>Clear observations and questions you can take back to your builder or architect.</span></li>
-            <li><strong>A one-on-one walkthrough</strong><span>We review my findings together so you understand the ideas and your possible next steps.</span></li>
-          </ul>
-        </div>
-        <p class="offer-price">Private Plan Review <strong>$1,500</strong></p>
-        <p class="offer-guarantee"><strong>Money-back satisfaction guarantee.</strong> If you're not satisfied with your completed review, I'll refund your fee.</p>
-        <p class="copy-closing"><strong>Available slots are limited.</strong> I accept no more than 50 new clients per year to ensure each review receives my personal attention.</p>
-      </section>
-      <section class="email-section lower-signup" aria-labelledby="secondary-signup-heading">
-        <p class="copy-eyebrow">Limited to 50 new clients per year</p>
-        <h2 id="secondary-signup-heading">Apply for a Private Plan Review.</h2>
-        <form id="leadFormSecondary" class="email-form" data-lead-form novalidate>
-          <label class="visually-hidden" for="leadEmailSecondary">Your email address</label>
-          <input id="leadEmailSecondary" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
-          <label class="visually-hidden" for="leadPhoneSecondary">Cell phone number (optional)</label>
-          <input id="leadPhoneSecondary" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="Cell phone number (optional)">
-          <button class="primary-button" id="leadSubmitSecondary" type="submit">Apply for a Plan Review — $1,500 <span aria-hidden="true">↗</span></button>
-          <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
-        </form>
-        <p class="helper-text">No payment required to apply. Your phone number is optional.</p>
-        <p id="leadStatusSecondary" class="form-status" role="status" aria-live="polite"></p>
       </section>
     </div>
     <footer class="site-footer">© <span data-year></span> Custom Home University <span aria-hidden="true">·</span> <a href="privacy.html">Privacy</a></footer>
