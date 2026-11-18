@@ -13,6 +13,8 @@
     if (url.protocol !== "https:") return;
     const mount = document.getElementById("videoMount");
     if (!mount) return;
+    // A directly embedded homepage video takes priority over cached configuration.
+    if (mount.querySelector("iframe[data-pinned-video]")) return;
     if (/\.mp4(?:$|[?#])/i.test(url.href)) {
       const showVideo = () => {
         const player = document.createElement("video");
