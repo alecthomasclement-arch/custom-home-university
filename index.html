@@ -23,12 +23,12 @@
         <form id="leadForm" class="email-form" novalidate>
           <label class="visually-hidden" for="leadEmail">Your email address</label>
           <input id="leadEmail" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
-          <label class="visually-hidden" for="leadPhone">Your cell phone number</label>
-          <input id="leadPhone" type="tel" name="phone" autocomplete="tel" inputmode="tel" required maxlength="32" placeholder="Enter your cell phone number">
+          <label class="visually-hidden" for="leadPhone">Cell phone number (optional)</label>
+          <input id="leadPhone" type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="Cell phone number (optional)">
           <button class="primary-button" id="leadSubmit" type="submit">Continue to application <span aria-hidden="true">↗</span></button>
           <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
         </form>
-        <p class="helper-text">We'll use your email and phone to discuss your plan review. No payment required to apply.</p>
+        <p class="helper-text">We'll use your email to discuss your plan review. A phone number is optional. No payment required to apply.</p>
         <p id="leadStatus" class="form-status" role="status" aria-live="polite"></p>
       </section>
     </div>

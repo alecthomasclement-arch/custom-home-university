@@ -88,7 +88,7 @@
   function validatePhone(input) {
     input.value = input.value.trim();
     const digits = input.value.replace(/\D/g, "");
-    const valid = /^[+0-9() .-]+$/.test(input.value) && digits.length >= 10 && digits.length <= 15;
+    const valid = input.value === "" || (/^[+0-9() .-]+$/.test(input.value) && digits.length >= 10 && digits.length <= 15);
     input.setCustomValidity(valid ? "" : "Enter a valid cell phone number (10–15 digits).");
   }
   async function submit(form, type, button, status) {
