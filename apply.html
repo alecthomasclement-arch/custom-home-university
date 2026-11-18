@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Apply for a Private Plan Review with Custom Home University.">
+  <title>Apply for a Private Plan Review | Custom Home University</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/config.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body data-page="apply">
+  <main class="form-container">
+    <header class="form-header">
+      <a class="wordmark" href="index.html">Custom Home University</a>
+      <div class="header-rule"></div>
+      <p class="eyebrow">Private homeowner services</p>
+      <h1>Apply for a<br>Private Plan Review</h1>
+      <p class="intro">We accept one new project per week to ensure each homeowner receives personal attention.</p>
+      <div class="form-meta"><span>7 questions</span><span aria-hidden="true">·</span><span>Takes approximately 2 minutes</span></div>
+    </header>
+    <form id="applicationForm" class="application-form" novalidate>
+      <div class="contact-panel">
+        <label for="applicationEmail">Your email address <span class="required" aria-hidden="true">*</span></label>
+        <p>We'll use this address to respond to your application.</p>
+        <input type="email" id="applicationEmail" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+      </div>
+      <fieldset class="question">
+        <legend><span class="question-index">01</span><span>What type of home are you building? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="home_type" value="Custom home with a builder" required><span>Custom home with a builder</span></label>
+          <label class="choice"><input type="radio" name="home_type" value="Architect-designed custom home"><span>Architect-designed custom home</span></label>
+          <label class="choice"><input type="radio" name="home_type" value="Major renovation"><span>Major renovation</span></label>
+          <label class="choice"><input type="radio" name="home_type" value="Other"><span>Other</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">02</span><span>What is your estimated construction budget (excluding land)? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="budget" value="Under $750K" required><span>Under $750K</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$750K–$1M"><span>$750K–$1M</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$1M–$2M"><span>$1M–$2M</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$2M–$3M"><span>$2M–$3M</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$3M+"><span>$3M+</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">03</span><span>Where will your home be built? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="field-body"><label class="visually-hidden" for="projectLocation">City and state</label><input class="text-field" id="projectLocation" name="location" type="text" placeholder="City and state" maxlength="120" required></div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">04</span><span>How far along are you in the design process? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="design_stage" value="Early concepts" required><span>Early concepts</span></label>
+          <label class="choice"><input type="radio" name="design_stage" value="Developed plans"><span>Developed plans</span></label>
+          <label class="choice"><input type="radio" name="design_stage" value="Finalizing construction drawings"><span>Finalizing construction drawings</span></label>
+          <label class="choice"><input type="radio" name="design_stage" value="Already building"><span>Already building</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">05</span><span>Who is designing your home? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="designer" value="My builder" required><span>My builder</span></label>
+          <label class="choice"><input type="radio" name="designer" value="A residential designer"><span>A residential designer</span></label>
+          <label class="choice"><input type="radio" name="designer" value="An architecture firm"><span>An architecture firm</span></label>
+          <label class="choice"><input type="radio" name="designer" value="Not sure"><span>Not sure</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">06</span><span>What is your biggest concern about your current plans? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="field-body"><label class="visually-hidden" for="mainConcern">A brief written response</label><textarea id="mainConcern" class="text-field" name="concern" rows="5" maxlength="1000" required placeholder="A brief written response"></textarea></div>
+      </fieldset>
+      <fieldset class="question">
+        <legend><span class="question-index">07</span><span>When would you ideally need your review completed? <span class="required" aria-hidden="true">*</span></span></legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="timeline" value="Within two weeks" required><span>Within two weeks</span></label>
+          <label class="choice"><input type="radio" name="timeline" value="Within a month"><span>Within a month</span></label>
+          <label class="choice"><input type="radio" name="timeline" value="Later"><span>Later</span></label>
+          <label class="choice"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
+        </div>
+      </fieldset>
+      <div class="submit-section">
+        <button id="applicationSubmit" class="primary-button submit-application" type="submit">Request a Plan Review — $1,495 <span aria-hidden="true">↗</span></button>
+        <p class="fine-print">No payment required to apply. We will confirm suitability, availability, and whether services can legally be provided in your project location.</p>
+        <p id="applicationStatus" class="form-status" role="status" aria-live="polite"></p>
+      </div>
+      <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
+    </form>
+    <footer class="site-footer">© <span data-year></span> Custom Home University <span aria-hidden="true">·</span> <a href="privacy.html">Privacy</a></footer>
+  </main>
+  <iframe name="chuSubmissionFrame" id="chuSubmissionFrame" class="submission-frame" title="Form submission confirmation"></iframe>
+</body>
+</html>

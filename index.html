@@ -1,299 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f8f7f4" />
-  <meta name="description" content="Custom Home University. A new way to learn about the custom home journey. Join the list for updates." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Custom Home University — professional plan reviews for homeowners building custom homes.">
   <title>Custom Home University</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f8f7f4;
-      --ink: #252522;
-      --muted: #777771;
-      --line: #d8d7d2;
-      --field: #fffefa;
-      --panel: #e9e8e3;
-      --panel-line: #dbdad3;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100svh;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      width: min(100% - 48px, 810px);
-      margin: 0 auto;
-      padding: clamp(70px, 11vh, 110px) 0 45px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(38px, 5.2vw, 63px);
-      font-weight: 500;
-      letter-spacing: -0.067em;
-      line-height: 1.12;
-      text-align: center;
-      text-wrap: balance;
-    }
-
-    .video-shell {
-      position: relative;
-      margin-top: clamp(46px, 6.1vh, 68px);
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: var(--panel);
-      border: 1px solid var(--panel-line);
-      overflow: hidden;
-    }
-
-    .video-shell iframe,
-    .video-shell video {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 22px;
-      color: #77776f;
-    }
-
-    .play-outline {
-      width: 82px;
-      height: 82px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #c7c6be;
-      border-radius: 50%;
-    }
-
-    .play-outline svg { margin-left: 4px; }
-
-    .placeholder p {
-      margin: 0;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    .signup {
-      width: min(100%, 520px);
-      margin-top: clamp(38px, 5.6vh, 54px);
-      text-align: center;
-    }
-
-    .signup h2 {
-      margin: 0 0 18px;
-      font-size: 15px;
-      line-height: 1.4;
-      font-weight: 400;
-      letter-spacing: 0.005em;
-    }
-
-    .signup-form {
-      width: 100%;
-      display: flex;
-      gap: 8px;
-    }
-
-    .signup-form input {
-      flex: 1 1 auto;
-      min-width: 0;
-      min-height: 52px;
-      padding: 0 17px;
-      border: 1px solid var(--line);
-      border-radius: 0;
-      outline-offset: 3px;
-      background: var(--field);
-      color: var(--ink);
-      font: inherit;
-      font-size: 14px;
-    }
-
-    .signup-form input::placeholder { color: #92918b; }
-
-    .signup-form input:focus-visible,
-    .signup-form button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-
-    .signup-form button {
-      flex: 0 0 auto;
-      min-height: 52px;
-      padding: 0 23px;
-      border: 1px solid var(--ink);
-      border-radius: 0;
-      background: var(--ink);
-      color: #fff;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.012em;
-      transition: background 150ms ease;
-    }
-
-    .signup-form button:hover { background: #484840; }
-    .signup-form button:disabled { opacity: .65; cursor: progress; }
-
-    .status {
-      min-height: 20px;
-      margin: 11px 0 0;
-      color: #65655f;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .status[data-kind="error"] { color: #9b443e; }
-    .status[data-kind="success"] { color: #375d43; }
-
-    footer {
-      margin-top: clamp(40px, 8vh, 85px);
-      color: #a1a099;
-      font-size: 11px;
-      letter-spacing: .035em;
-      text-align: center;
-    }
-
-    @media (max-width: 520px) {
-      .page { width: min(100% - 36px, 810px); padding-top: 84px; }
-      h1 { font-size: clamp(34px, 9vw, 47px); max-width: 420px; }
-      .video-shell { margin-top: 45px; }
-      .play-outline { width: 64px; height: 64px; }
-      .play-outline svg { width: 17px; height: 20px; }
-      .placeholder { gap: 15px; }
-      .placeholder p { font-size: 9px; }
-      .signup-form input { min-height: 50px; }
-      .signup-form button { min-height: 50px; padding: 0 16px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .signup-form button { transition: none; }
-    }
-  </style>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/config.js" defer></script>
+  <script src="assets/site.js" defer></script>
 </head>
-<body>
-  <main class="page">
-    <h1>Custom Home University</h1>
-
-    <section class="video-shell" id="videoMount" aria-label="Introduction video">
-      <!-- Replaced with a playable video automatically once VIDEO_URL is set below. -->
-      <div class="placeholder" aria-label="Introduction video coming soon">
-        <div class="play-outline" aria-hidden="true">
-          <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
-            <path d="M3 2.8L19.5 13L3 23.2V2.8Z" stroke="currentColor" stroke-width="1.45" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <p>Introduction video coming soon</p>
-      </div>
-    </section>
-
-    <section class="signup" aria-labelledby="signup-heading">
-      <h2 id="signup-heading">Be the first to know when we launch.</h2>
-      <form class="signup-form" id="signupForm">
-        <label for="signupEmail" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Email address</label>
-        <input id="signupEmail" name="email" type="email" placeholder="Your email address" autocomplete="email" required maxlength="254" />
-        <button id="signupButton" type="submit">Join the list</button>
-      </form>
-      <p class="status" id="signupStatus" role="status" aria-live="polite"></p>
-    </section>
-
-    <footer>© <span id="year"></span> Custom Home University</footer>
+<body data-page="home">
+  <main class="landing-container">
+    <div class="landing-content">
+      <h1 class="brand-heading">Custom Home University</h1>
+      <section class="video-frame" id="videoMount" aria-label="Introduction video">
+        <div class="video-placeholder"><span class="play-ring" aria-hidden="true"><svg width="24" height="27" viewBox="0 0 24 27" fill="none"><path d="M4 2.8 21 13.5 4 24.2V2.8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="placeholder-caption">Introduction video coming soon</span></div>
+      </section>
+      <section class="email-section" aria-labelledby="email-heading">
+        <h2 id="email-heading">Start your private plan review.</h2>
+        <form id="leadForm" class="email-form" novalidate>
+          <label class="visually-hidden" for="leadEmail">Your email address</label>
+          <input id="leadEmail" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="Enter your email address">
+          <button class="primary-button" id="leadSubmit" type="submit">Continue to application <span aria-hidden="true">↗</span></button>
+          <input type="text" name="website" class="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true">
+        </form>
+        <p class="helper-text">No payment required to apply.</p>
+        <p id="leadStatus" class="form-status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+    <footer class="site-footer">© <span data-year></span> Custom Home University <span aria-hidden="true">·</span> <a href="privacy.html">Privacy</a></footer>
   </main>
-
-  <script>
-    /*
-      TWO SIMPLE SETTINGS TO FINISH YOUR SITE:
-
-      1. VIDEO_URL: Paste a YouTube/Vimeo EMBED URL, or an https://.../video.mp4 URL.
-         YouTube example: https://www.youtube-nocookie.com/embed/VIDEO_ID
-         Vimeo example:   https://player.vimeo.com/video/VIDEO_ID
-
-      2. SIGNUP_ENDPOINT: Paste your form endpoint, such as a Formspree endpoint.
-         Example: https://formspree.io/f/YOUR_FORM_ID
-         The email form will only collect addresses after this is configured.
-    */
-    const VIDEO_URL = "";
-    const SIGNUP_ENDPOINT = "";
-
-    const videoMount = document.querySelector("#videoMount");
-    if (VIDEO_URL) {
-      if (/\.mp4(?:[?#]|$)/i.test(VIDEO_URL)) {
-        const player = document.createElement("video");
-        player.src = VIDEO_URL;
-        player.controls = true;
-        player.playsInline = true;
-        player.preload = "metadata";
-        player.setAttribute("aria-label", "Custom Home University introduction video");
-        videoMount.replaceChildren(player);
-      } else {
-        const embed = document.createElement("iframe");
-        embed.src = VIDEO_URL;
-        embed.title = "Custom Home University introduction video";
-        embed.loading = "lazy";
-        embed.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        embed.allowFullscreen = true;
-        videoMount.replaceChildren(embed);
-      }
-    }
-
-    document.querySelector("#year").textContent = new Date().getFullYear();
-    const form = document.querySelector("#signupForm");
-    const button = document.querySelector("#signupButton");
-    const status = document.querySelector("#signupStatus");
-
-    function setStatus(message, kind = "") {
-      status.textContent = message;
-      status.dataset.kind = kind;
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-
-      if (!SIGNUP_ENDPOINT) {
-        setStatus("Email signup is not connected yet. Please check back soon.", "error");
-        return;
-      }
-
-      button.disabled = true;
-      button.textContent = "Joining…";
-      setStatus("");
-      try {
-        const response = await fetch(SIGNUP_ENDPOINT, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { "Accept": "application/json" }
-        });
-        if (!response.ok) throw new Error("Email signup request failed");
-        form.reset();
-        setStatus("You're on the list. Thanks for signing up!", "success");
-      } catch (error) {
-        setStatus("We couldn't submit your email. Please try again.", "error");
-      } finally {
-        button.disabled = false;
-        button.textContent = "Join the list";
-      }
-    });
-  </script>
+  <iframe name="chuSubmissionFrame" id="chuSubmissionFrame" class="submission-frame" title="Form submission confirmation"></iframe>
 </body>
 </html>
