@@ -9,15 +9,30 @@
   function configureVideo(raw) {
     if (!raw) return;
     let url;
-    try { url = new URL(raw); } catch (_) { return; }
+    try { url = new URL(raw, document.baseURI); } catch (_) { return; }
     if (url.protocol !== "https:") return;
     const mount = document.getElementById("videoMount");
     if (!mount) return;
     if (/\.mp4(?:$|[?#])/i.test(url.href)) {
-      const player = document.createElement("video");
-      player.controls = true; player.playsInline = true; player.preload = "metadata";
-      player.setAttribute("aria-label", "Custom Home University introduction video");
-      player.src = url.href; mount.replaceChildren(player); return;
+      const showVideo = () => {
+        const player = document.createElement("video");
+        player.controls = true;
+        player.playsInline = true;
+        player.preload = "metadata";
+        player.setAttribute("aria-label", "Custom Home University introduction video");
+        player.src = url.href;
+        mount.classList.add("is-portrait-video");
+        mount.replaceChildren(player);
+      };
+      // The file is uploaded separately. Preserve the placeholder until it exists.
+      if (url.origin === window.location.origin) {
+        fetch(url.href, { method: "HEAD" })
+          .then(response => { if (response.ok) showVideo(); })
+          .catch(() => { /* Keep the placeholder if the file is unavailable. */ });
+      } else {
+        showVideo();
+      }
+      return;
     }
     let embed = "";
     const host = url.hostname.toLowerCase();
