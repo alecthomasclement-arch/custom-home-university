@@ -42,32 +42,54 @@
   function configureLeadForm() {
     const form = document.getElementById("leadForm");
     const input = document.getElementById("leadEmail");
+    const phone = document.getElementById("leadPhone");
+    phone.addEventListener("input", () => phone.setCustomValidity(""));
     const button = document.getElementById("leadSubmit");
     const status = document.getElementById("leadStatus");
     form.addEventListener("submit", async e => {
       e.preventDefault();
       input.value = input.value.trim();
+      validatePhone(phone);
       if (!form.reportValidity()) return;
       const email = input.value;
+      const phoneNumber = phone.value;
       if (!(await submit(form, "lead", button, status))) return;
-      try { sessionStorage.setItem("chu_application_email", email); } catch (_) {}
+      try {
+        sessionStorage.setItem("chu_application_email", email);
+        sessionStorage.setItem("chu_application_phone", phoneNumber);
+      } catch (_) {}
       window.location.assign("apply.html");
     });
   }
   function configureApplicationForm() {
     const form = document.getElementById("applicationForm");
     const input = document.getElementById("applicationEmail");
+    const phone = document.getElementById("applicationPhone");
+    phone.addEventListener("input", () => phone.setCustomValidity(""));
     const button = document.getElementById("applicationSubmit");
     const status = document.getElementById("applicationStatus");
-    try { input.value = sessionStorage.getItem("chu_application_email") || ""; } catch (_) {}
+    try {
+      input.value = sessionStorage.getItem("chu_application_email") || "";
+      phone.value = sessionStorage.getItem("chu_application_phone") || "";
+    } catch (_) {}
     form.addEventListener("submit", async e => {
       e.preventDefault();
       input.value = input.value.trim();
+      validatePhone(phone);
       if (!form.reportValidity()) return;
       if (!(await submit(form, "application", button, status))) return;
-      try { sessionStorage.removeItem("chu_application_email"); } catch (_) {}
+      try {
+        sessionStorage.removeItem("chu_application_email");
+        sessionStorage.removeItem("chu_application_phone");
+      } catch (_) {}
       window.location.assign("thank-you.html");
     });
+  }
+  function validatePhone(input) {
+    input.value = input.value.trim();
+    const digits = input.value.replace(/\D/g, "");
+    const valid = /^[+0-9() .-]+$/.test(input.value) && digits.length >= 10 && digits.length <= 15;
+    input.setCustomValidity(valid ? "" : "Enter a valid cell phone number (10–15 digits).");
   }
   async function submit(form, type, button, status) {
     const endpoint = String(config.backendUrl || "").trim();

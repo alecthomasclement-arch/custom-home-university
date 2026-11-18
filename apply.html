@@ -23,9 +23,15 @@
     </header>
     <form id="applicationForm" class="application-form" novalidate>
       <div class="contact-panel">
-        <label for="applicationEmail">Your email address <span class="required" aria-hidden="true">*</span></label>
-        <p>We'll use this address to respond to your application.</p>
-        <input type="email" id="applicationEmail" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+        <p>We'll use these details to respond to your application.</p>
+        <div class="contact-field">
+          <label for="applicationEmail">Your email address <span class="required" aria-hidden="true">*</span></label>
+          <input type="email" id="applicationEmail" name="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+        </div>
+        <div class="contact-field">
+          <label for="applicationPhone">Your cell phone number <span class="required" aria-hidden="true">*</span></label>
+          <input type="tel" id="applicationPhone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-5555" maxlength="32" required>
+        </div>
       </div>
       <fieldset class="question">
         <legend><span class="question-index">01</span><span>What type of home are you building? <span class="required" aria-hidden="true">*</span></span></legend>
