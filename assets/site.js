@@ -39,8 +39,13 @@
     if (host === "youtu.be" || host === "www.youtu.be") {
       embed = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(url.pathname.substring(1));
     } else if (["youtube.com","www.youtube.com","m.youtube.com","www.youtube-nocookie.com","youtube-nocookie.com"].includes(host)) {
-      const id = url.searchParams.get("v") || (url.pathname.startsWith("/embed/") ? url.pathname.split("/")[2] : "");
-      if (id) embed = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id);
+      const pathParts = url.pathname.split("/");
+      const isShort = pathParts[1] === "shorts";
+      const id = url.searchParams.get("v") || (["embed", "shorts", "live"].includes(pathParts[1]) ? pathParts[2] : "");
+      if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) {
+        embed = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id);
+        if (isShort) mount.classList.add("is-portrait-video");
+      }
     } else if (["vimeo.com","www.vimeo.com","player.vimeo.com"].includes(host)) {
       const id = url.pathname.match(/(?:\/video)?\/(\d+)/)?.[1];
       if (id) embed = "https://player.vimeo.com/video/" + id;
